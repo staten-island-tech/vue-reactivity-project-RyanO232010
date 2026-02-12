@@ -1,27 +1,34 @@
 <template>
   <div>
     <h1>The Recipe Book</h1>
-    <div class="bcontainer"></div>
   </div>
 </template>
 
 <script setup>
-const alp = "abcdefghijklmnopqrstuvwxyz".split("");
+import { ref } from 'vue'
 
-function injectButtons() {
-  bcontainer.innerHTML = "";
+const recipes = ref([])
 
-  alp.forEach(letter => {
-    bcontainer.insertAdjacentHTML(
-      "beforeend",
-      `<button class="letter-btn p-2 bg-red-600 m-1 px-3 py-1.5 rounded" data-letter="${letter}">
-        ${letter.toUpperCase()}
-      </button>`
-    );
-  });
+async function getData(){
+  try {
+    for (let i = 0; i < 3; i++) {
+      const res = await fetch(
+        "https://www.themealdb.com/api/json/v1/1/random.php"
+      );
+      const data = await res.json();
+
+      if (!data.meals || !data.meals.length) {
+        container.innerHTML = "<p>No meal found.</p>";
+        return;
+      }
+
+      meals.push(data.meals[0]);
+      savedMeals.push(data.meals[0])
+      console.log(data.meals[0]);
+    }
+}
 }
 
-injectButtons();
 </script>
 
 <style scoped>
