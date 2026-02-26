@@ -1,13 +1,18 @@
 <template>
   <div>
-    <h1>The Recipe Book</h1>
-    <div class="container">
-        <RecipeCard v-for="shoppingCart in shoppingCarts" :key="shoppingCart.name" :cart="cart">{{ shoppingCart.name }}</RecipeCard>
+    <h1 class="text-3xl text-center mb-6">The Recipe Book</h1>
+    <div class="container mx-auto grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <RecipeCard
+        v-for="shoppingCart in shoppingCarts"
+        :key="shoppingCart.id"
+        :shoppingCart="shoppingCart"
+      />
     </div>
   </div>
 </template>
 
 <script setup>
+import RecipeCard from '../components/RecipeCard.vue'
 
 const shoppingCarts = [
   { id: 1, name: "Wireless Mouse", price: 25.99, category: "Electronics", quantity: 1 },

@@ -1,7 +1,9 @@
 <template>
   <div>
-<h2 class=".shadow-lg">{{ shoppingCart.name }}</h2>
-<h3>{{ shoppingCart.category }}</h3>
+<h2 class="shadow-lg">{{ shoppingCart.name }}</h2>
+<!-- <h3>{{ shoppingCart.category }}</h3>
+<h3>{{ shoppingCart.id }}</h3> -->
+
   </div>
 </template>
 
@@ -14,5 +16,12 @@ defineProps({
 })
 </script>
 
-<style scoped>
+<style scoped>*
+h2{
+  font-size: 20px;
+}
+
+div{
+  border: 2px;
+}
 </style>
