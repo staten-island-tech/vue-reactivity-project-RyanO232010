@@ -1,8 +1,8 @@
 <template>
-  <div>
-<h2 class="shadow-lg">{{ shoppingCart.name }}</h2>
-<!-- <h3>{{ shoppingCart.category }}</h3>
-<h3>{{ shoppingCart.id }}</h3> -->
+  <div class="justify-center shadow-lg lg:min-h-150">
+<h2 class="text-center xl:text-2xl font-serif xl:font-bold">{{ shoppingCart.name }}</h2>
+<h3>{{ shoppingCart.category }}</h3>
+<h3>{{ shoppingCart.id }}</h3>
 
   </div>
 </template>
@@ -16,12 +16,5 @@ defineProps({
 })
 </script>
 
-<style scoped>*
-h2{
-  font-size: 20px;
-}
-
-div{
-  border: 2px;
-}
+<style scoped>
 </style>
