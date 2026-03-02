@@ -7,6 +7,7 @@
         :key="shoppingCart.id"
         :shoppingCart="shoppingCart"
       />
+      <button @click="addToCart(shoppingCarts)">click me</button>
     </div>
   </div>
 </template>
@@ -15,7 +16,7 @@
 import RecipeCard from '../components/RecipeCard.vue'
 
 const shoppingCarts = [
-  { id: 1, name: 'Wireless Mouse', price: 25.99, category: 'Electronics', quantity: 1 },
+  { id: 1, name: 'Wireless Mouse', price: 25.99, category: 'Electronics', quantity: 1, img: "../../public/imgs/mouse.jpg" },
   { id: 2, name: 'Mechanical Keyboard', price: 89.0, category: 'Electronics', quantity: 1 },
   { id: 3, name: 'HDMI Cable (6ft)', price: 12.5, category: 'Electronics', quantity: 2 },
   { id: 4, name: 'USB-C Hub', price: 45.0, category: 'Electronics', quantity: 1 },
@@ -58,6 +59,11 @@ const shoppingCarts = [
   { id: 29, name: 'Almond Butter', price: 12.0, category: 'Grocery', quantity: 1 },
   { id: 30, name: 'Sea Salt Crackers', price: 5.99, category: 'Grocery', quantity: 2 },
 ]
+
+function addToCart(shoppingCarts){
+
+  console.log(shoppingCarts)
+}
 </script>
 
 <style scoped>

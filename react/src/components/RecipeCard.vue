@@ -3,6 +3,9 @@
 <h2 class="text-center xl:text-2xl font-serif xl:font-bold">{{ shoppingCart.name }}</h2>
 <h3>{{ shoppingCart.category }}</h3>
 <h3>{{ shoppingCart.id }}</h3>
+<img :src="shoppingCart.img" alt="" class="w-100 ml-12 mt-10">
+<slot></slot>
+
 
   </div>
 </template>
