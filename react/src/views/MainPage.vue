@@ -1,13 +1,15 @@
 <template>
-  <div>
-    <h1 class="text-3xl text-center mb-6 p-12">Random Shop</h1>
-    <div class="container ml-45 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+  <h1 class="text-3xl text-center mb-6 p-12">Random Shop</h1>
+  <div class="flex justify-center items-center">
+    <div
+      class="flex justify-center items-center grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-400"
+    >
       <RecipeCard
         v-for="shoppingCart in shoppingCarts"
         :key="shoppingCart.id"
         :shoppingCart="shoppingCart"
-      />
-      <button @click="addToCart(shoppingCarts)">click me</button>
+        ><button @click="addToCart(shoppingCarts)">click me</button></RecipeCard
+      >
     </div>
   </div>
 </template>
@@ -16,9 +18,23 @@
 import RecipeCard from '../components/RecipeCard.vue'
 
 const shoppingCarts = [
-  { id: 1, name: 'Wireless Mouse', price: 25.99, category: 'Electronics', quantity: 1, img: "../../public/imgs/mouse.jpg" },
-  { id: 2, name: 'Mechanical Keyboard', price: 89.0, category: 'Electronics', quantity: 1 },
-  { id: 3, name: 'HDMI Cable (6ft)', price: 12.5, category: 'Electronics', quantity: 2 },
+  {
+    id: 1,
+    name: 'Wireless Mouse',
+    price: 25.99,
+    category: 'Electronics',
+    quantity: 1,
+    img: '../../public/imgs/mouse.jpg',
+  },
+  {
+    id: 2,
+    name: 'Mechanical Keyboard',
+    price: 89.0,
+    category: 'Electronics',
+    quantity: 1,
+    img: '../../public/imgs/keyboard.jpg',
+  },
+  { id: 3, name: 'HDMI Cable (6ft)', price: 12.5, category: 'Electronics', quantity: 2,img: '../../public/imgs/hdmi cable.jpg', },
   { id: 4, name: 'USB-C Hub', price: 45.0, category: 'Electronics', quantity: 1 },
   {
     id: 5,
@@ -60,8 +76,7 @@ const shoppingCarts = [
   { id: 30, name: 'Sea Salt Crackers', price: 5.99, category: 'Grocery', quantity: 2 },
 ]
 
-function addToCart(shoppingCarts){
-
+function addToCart(shoppingCarts) {
   console.log(shoppingCarts)
 }
 </script>
@@ -71,5 +86,56 @@ h1,
 h2 {
   text-align: center;
   font-size: 50px;
+}
+
+button {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 500px;
+  transition-property: background-color, border-color, color, box-shadow, filter;
+  transition-duration: 0.3s;
+  border: 1px solid transparent;
+  letter-spacing: 2px;
+  min-width: 160px;
+  text-transform: uppercase;
+  white-space: normal;
+  font-weight: 700;
+  text-align: center;
+  padding: 16px 14px 18px;
+  color: #444444;
+  box-shadow: inset 0 0 0 2px #444444;
+  background: linear-gradient(
+    to left,
+    #fffffd 0%,
+    #a0cccd 10%,
+    #6c98b4 20%,
+    #5585a5 30%,
+    #23548a 40%,
+    #23548a 50%,
+    #5585a5 60%,
+    #6c98b4 70%,
+    #a0cccd 80%,
+    #fffffd 90%
+  );
+  height: 48px;
+}
+
+button:hover {
+  background: linear-gradient(
+    to right,
+    #fff2d0 0%,
+    #e6d29f 10%,
+    #a68f61 20%,
+    #8c6125 30%,
+    #5d4127 40%,
+    #5d4127 50%,
+    #8c6125 60%,
+    #a68f61 70%,
+    #e6d29f 80%,
+    #fff2d0 90%
+  );
 }
 </style>
