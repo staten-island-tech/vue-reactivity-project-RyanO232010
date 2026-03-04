@@ -1,23 +1,27 @@
 <template>
-  <h1 class="text-3xl text-center mb-6 p-12">Random Shop</h1>
+  <h1 class="text-3xl text-center mb-6 p-12 font-serif">Random Shop</h1>
   <div class="flex justify-center items-center">
     <div
-      class="flex justify-center items-center grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-400"
+      class="flex justify-center align-center grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-400 h-2000"
     >
       <RecipeCard
+        class="flex flex-col justify-center place-items-center"
         v-for="shoppingCart in shoppingCarts"
         :key="shoppingCart.id"
         :shoppingCart="shoppingCart"
-        ><button @click="addToCart(shoppingCarts)">click me</button></RecipeCard
+        ><button class="justify-center mt-10" @click="addToCart(shoppingCart)">
+          click me
+        </button></RecipeCard
       >
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import RecipeCard from '../components/RecipeCard.vue'
 
-const shoppingCarts = [
+const shoppingCarts = ref([
   {
     id: 1,
     name: 'Wireless Mouse',
@@ -34,50 +38,234 @@ const shoppingCarts = [
     quantity: 1,
     img: '../../public/imgs/keyboard.jpg',
   },
-  { id: 3, name: 'HDMI Cable (6ft)', price: 12.5, category: 'Electronics', quantity: 2,img: '../../public/imgs/hdmi cable.jpg', },
-  { id: 4, name: 'USB-C Hub', price: 45.0, category: 'Electronics', quantity: 1 },
+  {
+    id: 3,
+    name: 'HDMI Cable (6ft)',
+    price: 12.5,
+    category: 'Electronics',
+    quantity: 2,
+    img: '../../public/imgs/hdmi cable.jpg',
+  },
+  {
+    id: 4,
+    name: 'USB-C Hub',
+    price: 45.0,
+    category: 'Electronics',
+    quantity: 1,
+    img: '../../public/imgs/usbc.webp',
+  },
   {
     id: 5,
     name: 'Noise Cancelling Headphones',
     price: 299.99,
     category: 'Electronics',
     quantity: 1,
+    img: '../../public/imgs/headphones.jpg',
   },
-  { id: 6, name: 'Cotton T-Shirt (Blue)', price: 19.99, category: 'Apparel', quantity: 3 },
-  { id: 7, name: 'Denim Jeans', price: 55.0, category: 'Apparel', quantity: 1 },
-  { id: 8, name: 'Wool Socks (3-pack)', price: 15.0, category: 'Apparel', quantity: 2 },
-  { id: 9, name: 'Running Shoes', price: 120.0, category: 'Apparel', quantity: 1 },
-  { id: 10, name: 'Leather Belt', price: 35.0, category: 'Apparel', quantity: 1 },
+  {
+    id: 6,
+    name: 'Cotton T-Shirt (Blue)',
+    price: 19.99,
+    category: 'Apparel',
+    quantity: 3,
+    img: '../../public/imgs/shirt.jpg',
+  },
+  {
+    id: 7,
+    name: 'Denim Jeans',
+    price: 55.0,
+    category: 'Apparel',
+    quantity: 1,
+    img: '../../public/imgs/jeans.webp',
+  },
+  {
+    id: 8,
+    name: 'Wool Socks (3-pack)',
+    price: 15.0,
+    category: 'Apparel',
+    quantity: 2,
+    img: '../../public/imgs/ocks.jpg',
+  },
+  {
+    id: 9,
+    name: 'Running Shoes',
+    price: 120.0,
+    category: 'Apparel',
+    quantity: 1,
+    img: '../../public/imgs/shoes.jpg',
+  },
+  {
+    id: 10,
+    name: 'Leather Belt',
+    price: 35.0,
+    category: 'Apparel',
+    quantity: 1,
+    img: '../../public/imgs/bta.jpg',
+  },
   {
     id: 11,
     name: 'Stainless Steel Water Bottle',
     price: 22.0,
     category: 'Home & Kitchen',
     quantity: 1,
+    img: '../../public/imgs/waterbottle.jpg',
   },
-  { id: 12, name: 'Ceramic Coffee Mug', price: 8.5, category: 'Home & Kitchen', quantity: 4 },
-  { id: 13, name: "Chef's Knife", price: 65.0, category: 'Home & Kitchen', quantity: 1 },
-  { id: 14, name: 'Non-stick Frying Pan', price: 40.0, category: 'Home & Kitchen', quantity: 1 },
-  { id: 15, name: 'Silicone Spatula Set', price: 18.0, category: 'Home & Kitchen', quantity: 1 },
-  { id: 16, name: 'Yoga Mat', price: 30.0, category: 'Fitness', quantity: 1 },
-  { id: 17, name: 'Dumbbell Set (5lbs)', price: 25.0, category: 'Fitness', quantity: 2 },
-  { id: 18, name: 'Resistance Bands', price: 14.99, category: 'Fitness', quantity: 1 },
-  { id: 19, name: 'Foam Roller', price: 20.0, category: 'Fitness', quantity: 1 },
-  { id: 20, name: 'Jump Rope', price: 10.0, category: 'Fitness', quantity: 1 },
-  { id: 21, name: 'Hardcover Journal', price: 18.5, category: 'Stationery', quantity: 2 },
-  { id: 22, name: 'Gel Pens (12-pack)', price: 12.0, category: 'Stationery', quantity: 1 },
-  { id: 23, name: 'Desk Lamp', price: 35.0, category: 'Office', quantity: 1 },
-  { id: 24, name: 'Ergonomic Mouse Pad', price: 15.0, category: 'Office', quantity: 1 },
-  { id: 25, name: 'Planner 2024', price: 24.0, category: 'Stationery', quantity: 1 },
-  { id: 26, name: 'Organic Green Tea', price: 14.0, category: 'Grocery', quantity: 3 },
-  { id: 27, name: 'Whole Bean Coffee (1lb)', price: 18.0, category: 'Grocery', quantity: 2 },
-  { id: 28, name: 'Dark Chocolate Bar', price: 4.5, category: 'Grocery', quantity: 5 },
-  { id: 29, name: 'Almond Butter', price: 12.0, category: 'Grocery', quantity: 1 },
-  { id: 30, name: 'Sea Salt Crackers', price: 5.99, category: 'Grocery', quantity: 2 },
-]
+  {
+    id: 12,
+    name: 'Ceramic Coffee Mug',
+    price: 8.5,
+    category: 'Home & Kitchen',
+    quantity: 4,
+    img: '../../public/imgs/coffeemug.jpg',
+  },
+  {
+    id: 13,
+    name: "Chef's Knife",
+    price: 65.0,
+    category: 'Home & Kitchen',
+    quantity: 1,
+    img: '../../public/imgs/knife.jpg',
+  },
+  {
+    id: 14,
+    name: 'Non-stick Frying Pan',
+    price: 40.0,
+    category: 'Home & Kitchen',
+    quantity: 1,
+    img: '../../public/imgs/pan.jpg',
+  },
+  {
+    id: 15,
+    name: 'Silicone Spatula Set',
+    price: 18.0,
+    category: 'Home & Kitchen',
+    quantity: 1,
+    img: '../../public/imgs/sps.jpg',
+  },
+  {
+    id: 16,
+    name: 'Yoga Mat',
+    price: 30.0,
+    category: 'Fitness',
+    quantity: 1,
+    img: '../../public/imgs/yoga mat.jpg',
+  },
+  {
+    id: 17,
+    name: 'Dumbbell Set (5lbs)',
+    price: 25.0,
+    category: 'Fitness',
+    quantity: 2,
+    img: '../../public/imgs/dumbbells.jpg',
+  },
+  {
+    id: 18,
+    name: 'Resistance Bands',
+    price: 14.99,
+    category: 'Fitness',
+    quantity: 1,
+    img: '../../public/imgs/band.jpg',
+  },
+  {
+    id: 19,
+    name: 'Foam Roller',
+    price: 20.0,
+    category: 'Fitness',
+    quantity: 1,
+    img: '../../public/imgs/foam roller.jpg',
+  },
+  {
+    id: 20,
+    name: 'Jump Rope',
+    price: 10.0,
+    category: 'Fitness',
+    quantity: 1,
+    img: '../../public/imgs/jumprope.jpg',
+  },
+  {
+    id: 21,
+    name: 'Hardcover Journal',
+    price: 18.5,
+    category: 'Stationery',
+    quantity: 2,
+    img: '../../public/imgs/journal.jpg',
+  },
+  {
+    id: 22,
+    name: 'Gel Pens (12-pack)',
+    price: 12.0,
+    category: 'Stationery',
+    quantity: 1,
+    img: '../../public/imgs/pen.avif',
+  },
+  {
+    id: 23,
+    name: 'Desk Lamp',
+    price: 35.0,
+    category: 'Office',
+    quantity: 1,
+    img: '../../public/imgs/lamp.avif',
+  },
+  {
+    id: 24,
+    name: 'Ergonomic Mouse Pad',
+    price: 15.0,
+    category: 'Off  ice',
+    quantity: 1,
+    img: '../../public/imgs/mousepad.jpg',
+  },
+  {
+    id: 25,
+    name: 'Planner 2024',
+    price: 24.0,
+    category: 'Stationery',
+    quantity: 1,
+    img: '../../public/imgs/planner.jpg',
+  },
+  {
+    id: 26,
+    name: 'Organic Green Tea',
+    price: 14.0,
+    category: 'Grocery',
+    quantity: 3,
+    img: '../../public/imgs/green_tea.avif',
+  },
+  {
+    id: 27,
+    name: 'Whole Bean Coffee (1lb)',
+    price: 18.0,
+    category: 'Grocery',
+    quantity: 2,
+    img: '../../public/imgs/coffee.avif',
+  },
+  {
+    id: 28,
+    name: 'Dark Chocolate Bar',
+    price: 4.5,
+    category: 'Grocery',
+    quantity: 5,
+    img: '../../public/imgs/chocolate.webp',
+  },
+  {
+    id: 29,
+    name: 'Almond Butter',
+    price: 12.0,
+    category: 'Grocery',
+    quantity: 1,
+    img: '../../public/imgs/almond.avif',
+  },
+  {
+    id: 30,
+    name: 'Sea Salt Crackers',
+    price: 5.99,
+    category: 'Grocery',
+    quantity: 2,
+    img: '../../public/imgs/cracker.jpg',
+  },
+])
 
-function addToCart(shoppingCarts) {
-  console.log(shoppingCarts)
+function addToCart(shoppingCart) {
+  console.log(shoppingCart)
 }
 </script>
 
