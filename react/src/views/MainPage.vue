@@ -21,7 +21,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref , reactive } from 'vue'
+
 import RecipeCard from '../components/RecipeCard.vue'
 
 const shoppingCarts = ref([
@@ -267,12 +268,15 @@ const shoppingCarts = ref([
   },
 ])
 
-const cart = ref([]);
+const cart = reactive([]);
 
 function addToCart(shoppingCart) {
-  console.log(shoppingCart)
+  cart.push(shoppingCart);
   console.log(cart)
 }
+
+
+
 </script>
 
 <style scoped>
