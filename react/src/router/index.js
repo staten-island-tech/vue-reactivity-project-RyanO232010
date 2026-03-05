@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import MainPage from '@/views/MainPage.vue'
+import ShoppingCart from '@/views/ShoppingCart.vue'
 
 
 const router = createRouter({
@@ -9,6 +10,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: MainPage,
+    },
+     {
+      path: '/cart',
+      name: 'cart',
+      component: ShoppingCart,
     },
   ],
 })

@@ -1,4 +1,7 @@
 <template>
+  <RouterLink to="/cart"
+    ><img src="../../public/imgs/cart.png" alt="" class="w-20 h-20"
+  /></RouterLink>
   <h1 class="text-3xl text-center mb-6 p-12 font-serif">Random Shop</h1>
   <div class="flex justify-center items-center">
     <div
@@ -264,8 +267,11 @@ const shoppingCarts = ref([
   },
 ])
 
+const cart = ref([]);
+
 function addToCart(shoppingCart) {
   console.log(shoppingCart)
+  console.log(cart)
 }
 </script>
 
