@@ -1,32 +1,16 @@
 <template>
-  <RouterLink to="/"><img src="../../public/imgs/home.jpg" alt="" class="w-20 h-20" /></RouterLink>
+  <RouterLink to="/">
+    <img src="/imgs/home.jpg" class="w-20 h-20" />
+  </RouterLink>
+
   <h1 class="text-3xl text-center mb-6 p-12 font-serif">Your Shopping Cart</h1>
-  <div>
-    <CartCard
-      class="flex flex-col justify-center place-items-center"
-      v-for="shoppingCart in shoppingCarts"
-      :key="shoppingCart.id"
-      :shoppingCart="shoppingCart"
-      ><button class="justify-center mt-10" @click="addToCart(shoppingCart)">
-        Remove
-      </button></CartCard
-    >
+
+  <div class="flex flex-wrap justify-center gap-4">
+    <CartCard v-for="item in cart" :key="item.id" :shoppingCart="item" />
   </div>
 </template>
 
 <script setup>
-defineProps({
-  shoppingCart: {
-    type: Object,
-    required: true,
-  },
-})
+import { cart } from './cart.js'
+import CartCard from '../components/CartCard.vue'
 </script>
-
-<style scoped>
-h1,
-h2 {
-  text-align: center;
-  font-size: 50px;
-}
-</style>

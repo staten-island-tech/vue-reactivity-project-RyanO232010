@@ -21,9 +21,9 @@
 </template>
 
 <script setup>
-import { ref , reactive } from 'vue'
-
+import { ref, reactive } from 'vue'
 import RecipeCard from '../components/RecipeCard.vue'
+import { cart } from '../views/cart.js'
 
 const shoppingCarts = ref([
   {
@@ -268,15 +268,14 @@ const shoppingCarts = ref([
   },
 ])
 
-const cart = reactive([]);
-
-function addToCart(shoppingCart) {
-  cart.push(shoppingCart);
-  console.log(cart)
+function addToCart(item) {
+  const check = cart.value.find((i) => i.id === item.id)
+  if (check) {
+    check.quantity += 1
+  } else {
+    cart.value.push({ ...item })
+  }
 }
-
-
-
 </script>
 
 <style scoped>
