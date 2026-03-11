@@ -40,7 +40,7 @@ const shoppingCarts = ref([
     price: 89.0,
     category: 'Electronics',
     quantity: 1,
-    img: '../../public/imgs/keyboard.jpg',
+    img: '../imgs/keyboard.jpg',
   },
   {
     id: 3,
@@ -48,7 +48,7 @@ const shoppingCarts = ref([
     price: 12.5,
     category: 'Electronics',
     quantity: 2,
-    img: '../../public/imgs/hdmi cable.jpg',
+    img: '../imgs/hdmi cable.jpg',
   },
   {
     id: 4,
@@ -56,7 +56,7 @@ const shoppingCarts = ref([
     price: 45.0,
     category: 'Electronics',
     quantity: 1,
-    img: '../../public/imgs/usbc.webp',
+    img: '../imgs/usbc.webp',
   },
   {
     id: 5,
@@ -64,7 +64,7 @@ const shoppingCarts = ref([
     price: 299.99,
     category: 'Electronics',
     quantity: 1,
-    img: '../../public/imgs/headphones.jpg',
+    img: '../imgs/headphones.jpg',
   },
   {
     id: 6,
@@ -72,7 +72,7 @@ const shoppingCarts = ref([
     price: 19.99,
     category: 'Apparel',
     quantity: 3,
-    img: '../../public/imgs/shirt.jpg',
+    img: '../imgs/shirt.jpg',
   },
   {
     id: 7,
@@ -80,7 +80,7 @@ const shoppingCarts = ref([
     price: 55.0,
     category: 'Apparel',
     quantity: 1,
-    img: '../../public/imgs/jeans.webp',
+    img: '../imgs/jeans.webp',
   },
   {
     id: 8,
@@ -88,7 +88,7 @@ const shoppingCarts = ref([
     price: 15.0,
     category: 'Apparel',
     quantity: 2,
-    img: '../../public/imgs/ocks.jpg',
+    img: '../imgs/ocks.jpg',
   },
   {
     id: 9,
@@ -96,7 +96,7 @@ const shoppingCarts = ref([
     price: 120.0,
     category: 'Apparel',
     quantity: 1,
-    img: '../../public/imgs/shoes.jpg',
+    img: '../imgs/shoes.jpg',
   },
   {
     id: 10,
@@ -104,7 +104,7 @@ const shoppingCarts = ref([
     price: 35.0,
     category: 'Apparel',
     quantity: 1,
-    img: '../../public/imgs/bta.jpg',
+    img: '../imgs/bta.jpg',
   },
   {
     id: 11,
@@ -112,7 +112,7 @@ const shoppingCarts = ref([
     price: 22.0,
     category: 'Home & Kitchen',
     quantity: 1,
-    img: '../../public/imgs/waterbottle.jpg',
+    img: '../imgs/waterbottle.jpg',
   },
   {
     id: 12,
@@ -120,7 +120,7 @@ const shoppingCarts = ref([
     price: 8.5,
     category: 'Home & Kitchen',
     quantity: 4,
-    img: '../../public/imgs/coffeemug.jpg',
+    img: '../imgs/coffeemug.jpg',
   },
   {
     id: 13,
@@ -128,7 +128,7 @@ const shoppingCarts = ref([
     price: 65.0,
     category: 'Home & Kitchen',
     quantity: 1,
-    img: '../../public/imgs/knife.jpg',
+    img: '../imgs/knife.jpg',
   },
   {
     id: 14,
@@ -136,7 +136,7 @@ const shoppingCarts = ref([
     price: 40.0,
     category: 'Home & Kitchen',
     quantity: 1,
-    img: '../../public/imgs/pan.jpg',
+    img: '../imgs/pan.jpg',
   },
   {
     id: 15,
@@ -144,7 +144,7 @@ const shoppingCarts = ref([
     price: 18.0,
     category: 'Home & Kitchen',
     quantity: 1,
-    img: '../../public/imgs/sps.jpg',
+    img: '../imgs/sps.jpg',
   },
   {
     id: 16,
@@ -152,7 +152,7 @@ const shoppingCarts = ref([
     price: 30.0,
     category: 'Fitness',
     quantity: 1,
-    img: '../../public/imgs/yoga mat.jpg',
+    img: '../imgs/yoga mat.jpg',
   },
   {
     id: 17,
@@ -160,7 +160,7 @@ const shoppingCarts = ref([
     price: 25.0,
     category: 'Fitness',
     quantity: 2,
-    img: '../../public/imgs/dumbbells.jpg',
+    img: '../imgs/dumbbells.jpg',
   },
   {
     id: 18,
@@ -168,7 +168,7 @@ const shoppingCarts = ref([
     price: 14.99,
     category: 'Fitness',
     quantity: 1,
-    img: '../../public/imgs/band.jpg',
+    img: '../imgs/band.jpg',
   },
   {
     id: 19,
@@ -176,7 +176,7 @@ const shoppingCarts = ref([
     price: 20.0,
     category: 'Fitness',
     quantity: 1,
-    img: '../../public/imgs/foam roller.jpg',
+    img: '../imgs/foam roller.jpg',
   },
   {
     id: 20,
@@ -184,7 +184,7 @@ const shoppingCarts = ref([
     price: 10.0,
     category: 'Fitness',
     quantity: 1,
-    img: '../../public/imgs/jumprope.jpg',
+    img: '../imgs/jumprope.jpg',
   },
   {
     id: 21,
@@ -192,7 +192,7 @@ const shoppingCarts = ref([
     price: 18.5,
     category: 'Stationery',
     quantity: 2,
-    img: '../../public/imgs/journal.jpg',
+    img: '../imgs/journal.jpg',
   },
   {
     id: 22,
@@ -200,7 +200,7 @@ const shoppingCarts = ref([
     price: 12.0,
     category: 'Stationery',
     quantity: 1,
-    img: '../../public/imgs/pen.avif',
+    img: '../imgs/pen.avif',
   },
   {
     id: 23,
@@ -208,7 +208,7 @@ const shoppingCarts = ref([
     price: 35.0,
     category: 'Office',
     quantity: 1,
-    img: '../../public/imgs/lamp.avif',
+    img: '../imgs/lamp.avif',
   },
   {
     id: 24,
@@ -216,7 +216,7 @@ const shoppingCarts = ref([
     price: 15.0,
     category: 'Off  ice',
     quantity: 1,
-    img: '../../public/imgs/mousepad.jpg',
+    img: '../imgs/mousepad.jpg',
   },
   {
     id: 25,
@@ -224,7 +224,7 @@ const shoppingCarts = ref([
     price: 24.0,
     category: 'Stationery',
     quantity: 1,
-    img: '../../public/imgs/planner.jpg',
+    img: '../imgs/planner.jpg',
   },
   {
     id: 26,
@@ -232,7 +232,7 @@ const shoppingCarts = ref([
     price: 14.0,
     category: 'Grocery',
     quantity: 3,
-    img: '../../public/imgs/green_tea.avif',
+    img: '../imgs/green_tea.avif',
   },
   {
     id: 27,
@@ -240,7 +240,7 @@ const shoppingCarts = ref([
     price: 18.0,
     category: 'Grocery',
     quantity: 2,
-    img: '../../public/imgs/coffee.avif',
+    img: '../imgs/coffee.avif',
   },
   {
     id: 28,
@@ -248,7 +248,7 @@ const shoppingCarts = ref([
     price: 4.5,
     category: 'Grocery',
     quantity: 5,
-    img: '../../public/imgs/chocolate.webp',
+    img: '../imgs/chocolate.webp',
   },
   {
     id: 29,
@@ -256,7 +256,7 @@ const shoppingCarts = ref([
     price: 12.0,
     category: 'Grocery',
     quantity: 1,
-    img: '../../public/imgs/almond.avif',
+    img: '../imgs/almond.avif',
   },
   {
     id: 30,
@@ -264,7 +264,7 @@ const shoppingCarts = ref([
     price: 5.99,
     category: 'Grocery',
     quantity: 2,
-    img: '../../public/imgs/cracker.jpg',
+    img: '../imgs/cracker.jpg',
   },
 ])
 
