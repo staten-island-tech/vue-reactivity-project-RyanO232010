@@ -32,7 +32,7 @@ const shoppingCarts = ref([
     price: 25.99,
     category: 'Electronics',
     quantity: 1,
-    img: '../../public/imgs/mouse.jpg',
+    img: '../imgs/mouse.jpg',
   },
   {
     id: 2,
